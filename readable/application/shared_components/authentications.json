@@ -1,0 +1,17 @@
+[
+  {
+    "id":"45607595705604910357"
+   ,"Identification":{
+      "Name":"Application Express Accounts"
+    }
+   ,"Settings":{
+      "Type":"No Authentication"
+    }
+   ,"Login Processing":{
+      "Switch in Session":false
+    }
+   ,"Real Application Security":{
+      "RAS Mode":"Disabled"
+    }
+  }
+]

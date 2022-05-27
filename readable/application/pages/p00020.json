@@ -1,0 +1,500 @@
+{
+  "id":"20"
+ ,"Identification":{
+    "Name":"report-inputs"
+   ,"Alias":"REPORT-INPUTS"
+   ,"Title":"report-inputs"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"10383320433639339174"
+     ,"Identification":{
+        "Title":"Breadcrumb"
+       ,"Type":"Breadcrumb"
+      }
+     ,"Source":{
+        "Breadcrumb":"Breadcrumb (45607596062266910359)"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Title Bar (45607861607500910523)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-BreadcrumbRegion--useBreadcrumbTitle"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "Breadcrumb Template":"Breadcrumb (45608016136418910576)"
+         ,"Template Options":[
+            "#DEFAULT#"
+          ]
+        }
+      }
+    }
+   ,{
+      "id":"10383323763366339175"
+     ,"Identification":{
+        "Title":"report-inputs"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Table \/ View"
+       ,"Table Owner":"Parsing Schema"
+       ,"Table Name":"CUSTOMERS"
+       ,"Include ROWID Column":false
+      }
+     ,"Order By":{
+        "Type":"None"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"t-Region--hideHeader"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":50
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (45607881189458910543)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--stretch"
+           ,"t-Report--staticRowColors"
+           ,"t-Report--rowHighlight"
+           ,"t-Report--inline"
+           ,"t-Report--hideNoPagination"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (with next and previous links)"
+         ,"Display Position":"Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":500
+        }
+       ,"Messages":{
+          "When No Data Found":"no data found"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"10383450461945339253"
+         ,"Identification":{
+            "Column Name":"ID"
+           ,"Type":"Hidden Column"
+          }
+         ,"Layout":{
+            "Sequence":0
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"10383450859320339254"
+         ,"Identification":{
+            "Column Name":"FIRST_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"First Name"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":2
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"10383451264303339254"
+         ,"Identification":{
+            "Column Name":"LAST_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Last Name"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":3
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"10383451637776339254"
+         ,"Identification":{
+            "Column Name":"EMAIL"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Email"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":4
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"10383452076453339254"
+         ,"Identification":{
+            "Column Name":"CITY"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"City"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":5
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"10383452493858339255"
+         ,"Identification":{
+            "Column Name":"COUNTRY"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Country"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":6
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"13742697326516527019"
+         ,"Identification":{
+            "Column Name":"DERIVED$02"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"\u0026nbsp;"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":26
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Column Formatting":{
+            "HTML Expression":"\u003Cinput type=\"radio\" name=\"col1\"\/\u003E\n\u003Cinput type=\"radio\" name=\"col2\"\/\u003E\n"
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"47833678466152162445"
+         ,"Identification":{
+            "Column Name":"DERIVED$01"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"\u0026nbsp;"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":16
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Column Formatting":{
+            "HTML Expression":"\u003Cinput type=\"checkbox\"\n       class=\"checklist\"\n       name=\"check-#ID#\"\n       value=\"1\"\n       unique-check\/\u003E\n\n\u003Cinput type=\"checkbox\"\n       class=\"checklist\"\n       name=\"check-#ID#\"\n       value=\"2\"\/\u003E\n\n\u003Cinput type=\"checkbox\"\n       class=\"checklist\"\n       name=\"check-#ID#\"\n       value=\"3\"\/\u003E\n\n\u003Cinput type=\"checkbox\"\n       class=\"checklist\"\n       name=\"check-#ID#\"\n       value=\"4\"\/\u003E\n    \n\u003Cbutton type=\"button\" \n        title=\"Get Selected\" \n        class=\"t-Button t-Button--noLabel t-Button--icon t-Button--small\" \n        data-id=\"#ID#\"\n        btn-check\u003E\n        \u003Cspan aria-hidden=\"true\" class=\"t-Icon fa fa-check-square-o\"\u003E\u003C\/span\u003E\n\u003C\/button\u003E\n"
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"13742698405800527030"
+     ,"Identification":{
+        "Name":"Get Line"
+      }
+     ,"Execution Options":{
+        "Sequence":20
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"jQuery Selector"
+       ,"jQuery Selector":"[btn-check]"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"13742699128230527037"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"const id = this.triggeringElement.getAttribute(\u0027data-id\u0027);\n\nconst checkedItems = Array.from(this.triggeringElement.parentElement.querySelectorAll(\u0027input[type=checkbox]:checked\u0027))\n                                .map(input =\u003E input.value)\n                                .join(\u0027,\u0027);\n                                \napex.message.alert(\u0027id: \u0027+id + \u0027\u005Cnitems: \u0027+checkedItems);"
+          }
+         ,"Execution Options":{
+            "Sequence":40
+           ,"Event":"Get Line (13742698405800527030)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"47833678885619162449"
+     ,"Identification":{
+        "Name":"Test Unique Check"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"jQuery Selector"
+       ,"jQuery Selector":"[unique-check]"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"47833678992654162450"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"const target = this.triggeringElement;\n\nif(target.checked){\n    document.querySelectorAll(\u0060input[name=${target.name}]:not([unique-check])\u0060).forEach( item =\u003E {\n        item.checked = false;\n        item.disabled = true;\n    });\n\n}else{\n    document.querySelectorAll(\u0060input[name=${target.name}]\u0060).forEach( item =\u003E item.disabled = false)\n}\n"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"Test Unique Check (47833678885619162449)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

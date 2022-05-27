@@ -1,0 +1,32 @@
+[
+  {
+    "id":"21123841475847070424"
+   ,"Identification":{
+      "File Name":"script\/card.js"
+    }
+   ,"Attributes":{
+      "Mime Type":"text\/javascript"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"45608038436604910603"
+   ,"Identification":{
+      "File Name":"app-icon.svg"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/svg+xml"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"45608038708913910604"
+   ,"Identification":{
+      "File Name":"app-icon.css"
+    }
+   ,"Attributes":{
+      "Mime Type":"text\/css"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+]

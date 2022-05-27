@@ -1,0 +1,669 @@
+{
+  "id":"11"
+ ,"Identification":{
+    "Name":"Voice Command"
+   ,"Alias":"VOICE-COMMAND"
+   ,"Title":"Voice Command"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"JavaScript":{
+    "Execute when Page Loads":"window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;\nwindow.SpeechGrammarList = window.SpeechGrammarList || window.webkitSpeechGrammarList;\n\nlet recognition = new window.SpeechRecognition();\n\nrecognition.grammars = new window.SpeechGrammarList();\nrecognition.continuous = false;\nrecognition.lang = \u0027en-US\u0027;\nrecognition.interimResults = false;\nrecognition.maxAlternatives = 1;\n\/*\nrecognition.addEventListener(\u0027speechend\u0027, () =\u003E{\n    recognition.stop();\n});\n*\/\n\ndocument.querySelector(\u0027#btn-mic\u0027).addEventListener(\u0027mousedown\u0027, () =\u003E{\n    recognition.start();\n});\n\ndocument.querySelector(\u0027#btn-mic\u0027).addEventListener(\u0027mouseup\u0027, () =\u003E{\n    recognition.stop();\n});\n\nrecognition.addEventListener(\u0027error\u0027, (event) =\u003E {\n    console.error(\u0027Erro no reconhecimento do texto: \u0027, event.error);\n});\n\nrecognition.onresult = function (event) {\n    console.log(\u0027-----------------------------\u0027);\n    let last = event.results.length - 1;\n    let texto = event.results[last][0].transcript;\n    apex.item(\u0027P11_INPUT_DATA\u0027).setValue(texto);\n    apex.region(\u0027region-music\u0027).refresh();\n}"
+  }
+ ,"CSS":{
+    "File URLs":[
+      "https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/animate.css\/4.1.1\/animate.min.css"
+    ]
+   ,"Inline":"#btn-mic{\n    position: fixed;\n    top:80px;\n    right:80px;\n    z-index: 999;\n    padding: 25px;\n    border-radius: 50%;\n}"
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"23042401396092194521"
+     ,"Identification":{
+        "Title":"Music"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"REST Source"
+       ,"REST Source":"API Itunes (38950771525990882145)"
+       ,"Page Items to Submit":[
+          "P11_INPUT_DATA"
+        ]
+      }
+     ,"Local Post Processing":{
+        "Type":"SQL Query"
+       ,"SQL Query":"select COUNTRY,\n       CURRENCY,\n       DISCCOUNT,\n       TRACKNAME,\n       ARTISTNAME,\n       PREVIEWURL,\n       RELEASEDATE,\n       COLLECTIONNAME,\n       COLLECTIONPRICE,\n       ARTWORKURL60\n  from #APEX$SOURCE_DATA#"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Static ID":"region-music"
+       ,"Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Parameters":[
+        {
+          "id":"38950799808984885442"
+         ,"Identification":{
+            "Name":"term (38950772552739882148)"
+          }
+         ,"Value":{
+            "Type":"Item"
+           ,"Item":"P11_INPUT_DATA"
+          }
+        }
+      ]
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":15
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (45607881189458910543)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--stretch"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (with next and previous links)"
+         ,"Display Position":"Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":true
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"38950796681561885410"
+         ,"Identification":{
+            "Column Name":"COUNTRY"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Country"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":70
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"38950796997173885413"
+         ,"Identification":{
+            "Column Name":"CURRENCY"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Currency"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Appearance":{
+            "Format Mask":"FML999G999G999G999G990D00"
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"38950797038797885414"
+         ,"Identification":{
+            "Column Name":"DISCCOUNT"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Disccount"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":60
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Appearance":{
+            "Format Mask":"FML999G999G999G999G990D00"
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"38950797191709885415"
+         ,"Identification":{
+            "Column Name":"TRACKNAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Track"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"38950797242988885416"
+         ,"Identification":{
+            "Column Name":"ARTISTNAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Artist"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"38950797409686885418"
+         ,"Identification":{
+            "Column Name":"PREVIEWURL"
+           ,"Type":"Link"
+          }
+         ,"Heading":{
+            "Heading":"Previewurl"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":80
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Link":{
+            "Target":"#PREVIEWURL#"
+           ,"Link Text":"\u003Cimg src=\"#ARTWORKURL60#\"\/\u003E"
+           ,"Link Attributes":"target=\"_blank\""
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+         ,"Comments":{
+            "Comments":"Click to open"
+          }
+        }
+       ,{
+          "id":"38950797764278885421"
+         ,"Identification":{
+            "Column Name":"RELEASEDATE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Releasedate"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":90
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Appearance":{
+            "Format Mask":"MM\/DD\/YYYY"
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"38950798672959885430"
+         ,"Identification":{
+            "Column Name":"COLLECTIONNAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Collection"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"38950798797660885431"
+         ,"Identification":{
+            "Column Name":"COLLECTIONPRICE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Collection Price"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Appearance":{
+            "Format Mask":"FML999G999G999G999G990D00"
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"38951709497317948802"
+         ,"Identification":{
+            "Column Name":"ARTWORKURL60"
+           ,"Type":"Hidden Column"
+          }
+         ,"Layout":{
+            "Sequence":190
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"38951711450016948822"
+     ,"Identification":{
+        "Title":"Search"
+       ,"Type":"Static Content"
+      }
+     ,"Source":{
+        "HTML Code":"\u003Cbutton class=\"animate__animated t-Icon fa fa-microphone u-color-2-bg animate__shakeX\" \n        type=\"button\" \n        id=\"btn-mic\"\u003E\n            \u003C!-- \u003Cspan class=\"t-Icon fa fa-microphone\" aria-hidden=\"true\"\u003E\u003C\/span\u003E --\u003E\n\u003C\/button\u003E"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (45607823258133910447)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"Press and hold the button to speak"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"46586843372232379319"
+     ,"Identification":{
+        "Title":"Voice command"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Hero (45607842456419910498)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"app-icon"
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"28140491364601119356"
+     ,"Identification":{
+        "Name":"P11_INPUT_DATA"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Search text"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Search (38951711450016948822)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (45608013698305910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"23042401455644194522"
+     ,"Identification":{
+        "Name":"Update List"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P11_INPUT_DATA"
+        ]
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"23042401552595194523"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Music (23042401396092194521)"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"Update List (23042401455644194522)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

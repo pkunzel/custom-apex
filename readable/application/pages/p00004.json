@@ -1,0 +1,451 @@
+{
+  "id":"4"
+ ,"Identification":{
+    "Name":"Credit Card"
+   ,"Alias":"CREDIT-CARD"
+   ,"Title":"Credit Card"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"JavaScript":{
+    "File URLs":[
+      "#APP_IMAGES#script\/card.js"
+    ]
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"18446363424453261315"
+     ,"Identification":{
+        "Title":"Credit Card"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"\u003Cdiv class=\u0027card-wrapper\u0027\u003E\u003C\/div\u003E\n"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"18446364883687261329"
+     ,"Identification":{
+        "Title":"Adapting the card.js library features to use within APEX"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Hero (45607842456419910498)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-HeroRegion--hideIcon"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"18446364367079261324"
+     ,"Identification":{
+        "Name":"P4_CARD_NUMBER"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Card Number"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Credit Card (18446363424453261315)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (45608013698305910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"18446364426523261325"
+     ,"Identification":{
+        "Name":"P4_CARD_NAME"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Card Name"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Credit Card (18446363424453261315)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (45608013698305910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"18446364503621261326"
+     ,"Identification":{
+        "Name":"P4_CARD_EXPIRY"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Card Expiry"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Credit Card (18446363424453261315)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (45608013698305910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"18446364635191261327"
+     ,"Identification":{
+        "Name":"P4_CARD_CVC"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Card Cvc"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Credit Card (18446363424453261315)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (45608013698305910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"18446366171793261342"
+     ,"Identification":{
+        "Button Name":"PROCESS"
+       ,"Label":"\"Process\" Data"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Credit Card (18446363424453261315)"
+       ,"Position":"BELOW_BOX"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Horizontal Alignment":"Left"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (45608014793597910574)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--large"
+         ,"t-Button--stretch"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"18446363602620261317"
+     ,"Identification":{
+        "Name":"Load Credit Card Script"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.READY"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"18446363752164261318"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"var card = new Card({\n    form: \u0027#wwvFlowForm\u0027,\n    container: \u0027.card-wrapper\u0027,\n\n    formSelectors: {\n        numberInput: \u0027#P4_CARD_NUMBER\u0027, \/\/ optional \u2014 default input[name=\"number\"]\n        expiryInput: \u0027#P4_CARD_EXPIRY\u0027, \/\/ optional \u2014 default input[name=\"expiry\"]\n        cvcInput: \u0027#P4_CARD_CVC\u0027, \/\/ optional \u2014 default input[name=\"cvc\"]\n        nameInput: \u0027#P4_CARD_NAME\u0027 \/\/ optional - defaults input[name=\"name\"]\n    }\n});"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"Load Credit Card Script (18446363602620261317)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"18446365917529261340"
+     ,"Identification":{
+        "Name":"Process Data"
+       ,"Type":"Execute Code"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"null;"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Success Message":{
+        "Success Message":"Number: \u0026P4_CARD_NUMBER.\u003Cbr\/\u003E\nName: \u0026P4_CARD_NAME.\u003Cbr\/\u003E\nExpiry: \u0026P4_CARD_EXPIRY.\u003Cbr\/\u003E\nCVC: \u0026P4_CARD_CVC."
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "id":"9"
+ ,"Identification":{
+    "Name":"drag and drop list view"
+   ,"Alias":"DRAG-AND-DROP-LIST-VIEW"
+   ,"Title":"drag and drop list view"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"JavaScript":{
+    "Function and Global Variable Declaration":"let counter = 5;"
+  }
+ ,"CSS":{
+    "Inline":".a-ListView-item{\n    border: 1px solid black !important;\n    margin-bottom: 5px;\n}"
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"30419331218834076406"
+     ,"Identification":{
+        "Title":"New"
+       ,"Type":"List View"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select DEPTNO,\n       DNAME,\n       LOC,\n       ACTIVE\n  from DEPT"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Features":"Advanced Formatting"
+         ,"Text Formatting":"\u0026DNAME.\n"
+        }
+       ,"Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":15
+        }
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"8303319549351968853"
+     ,"Identification":{
+        "Button Name":"Add"
+       ,"Label":"Add"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"New (30419331218834076406)"
+       ,"Position":"EDIT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Icon (45608014067877910573)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--large"
+         ,"t-Button--primary"
+        ]
+       ,"Icon":"fa-plus"
+      }
+     ,"Behavior":{
+        "Action":"Defined by Dynamic Action"
+       ,"Execute Validations":true
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"8303319984613968860"
+     ,"Identification":{
+        "Name":"Add New Element"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"Button"
+       ,"Button":"Add (8303319549351968853)"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"8303320453515968861"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"let listItem = document.createElement(\"li\");\n\nlistItem.classList.add(\u0027a-ListView-item\u0027);\n\nlistItem.setAttribute(\u0027draggable\u0027,\u0027true\u0027);\nlistItem.textContent = counter++;\n\nlistItem.addEventListener(\"dragstart\", () =\u003E {\n    listItem.classList.add(\"dragging\");\n});\n\nlistItem.addEventListener(\"dragend\", () =\u003E {\n    listItem.classList.remove(\"dragging\");\n});\n\ndocument.querySelector(\".a-ListView\").appendChild(listItem);"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"Add New Element (8303319984613968860)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"8303320894648968861"
+     ,"Identification":{
+        "Name":"Drag N Drop Events"
+      }
+     ,"Execution Options":{
+        "Sequence":20
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.READY"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"8303321321302968861"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"const draggables = document.querySelectorAll(\".a-ListView-item\");\nconst containers = document.querySelectorAll(\".a-ListView\");\n\ndraggables.forEach((draggable) =\u003E {\n    draggable.setAttribute(\u0027draggable\u0027, true);\n\n\tdraggable.addEventListener(\"dragstart\", () =\u003E {\n\t\tdraggable.classList.add(\"dragging\");\n\t});\n\n\tdraggable.addEventListener(\"dragend\", () =\u003E {\n\t\tdraggable.classList.remove(\"dragging\");\n\t});\n});\n\ncontainers.forEach((container) =\u003E {\n\tcontainer.addEventListener(\"dragover\", (e) =\u003E {\n\t\te.preventDefault();\n\n\t\tconst afterElement = getDragAfterElement(container, e.clientY);\n\t\tconst draggable = document.querySelector(\".dragging\");\n\n\t\tif(afterElement == null){\n\t\t\tcontainer.appendChild(draggable);\n\t\t}\n\t\telse{\n\t\t\tcontainer.insertBefore(draggable, afterElement);\n\t\t}\n\t\t\n\t});\n});\n\nfunction getDragAfterElement(container, y) {\n\tconst draggableElements = [...container.querySelectorAll(\".a-ListView-item:not(.dragging)\")];\n\n\treturn draggableElements.reduce(\n\t\t(closest, child) =\u003E {\n\t\t\tconst box = child.getBoundingClientRect();\n\t\t\tconst offset = y - box.top - box.height \/ 2;\n\n\t\t\t\/\/ above the hovering element\n\t\t\tif (offset \u003C 0 \u0026\u0026 offset \u003E closest.offset) {\n\t\t\t\treturn { offset: offset, element: child };\n\t\t\t}else{\n\t\t\t\treturn closest;\n\t\t\t}\n\t\t},\n\t\t{ offset: Number.NEGATIVE_INFINITY }\n\t).element;\n}"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"Drag N Drop Events (8303320894648968861)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

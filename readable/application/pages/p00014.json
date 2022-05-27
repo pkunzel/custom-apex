@@ -1,0 +1,89 @@
+{
+  "id":"14"
+ ,"Identification":{
+    "Name":"Context Menu"
+   ,"Alias":"CONTEXT-MENU"
+   ,"Title":"Context Menu"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"JavaScript":{
+    "Function and Global Variable Declaration":"let pk_menu = {\n    items : [\n        { type:\"action\", label: \"Inserir\", action: function(){ $(\"#BTN_NOVO_SUB\").click()}},\n        { type:\"action\", label: \"Editar\", action:  function(){ $(\"#BTN_EDITAR\").click()}},\n        { type:\"separator\"},\n        { type:\"action\", label: \"Excluir\", action: function(){ $(\"#BTN_REMOVER\").click()}}\n    ]\n};\n\n\nfunction createContextMenu(idRegion, selectorNode, definitionMenu, callback, callbackParams){\n    \n    let menuName;\n    \n    if(typeof definitionMenu == \"string\"){\n        menuName = definitionMenu;\n        $(\u0060#${menuName}\u0060).menu();\n    }else{\n        menuName = \"treeMenu\";\n        $(\"body\").append(\u0060\u003Cdiv id=\"${menuName}\"\u003E\u003C\/div\u003E\u0060);\n\n        $(\u0060#${menuName}\u0060).menu(definitionMenu);\n    }\n\n    $(\u0060#${idRegion}\u0060).off( \"contextmenu\", \u0060${selectorNode}\u0060);\n    $(\u0060#${idRegion}\u0060).on( \"contextmenu\", \u0060${selectorNode}\u0060, function( event ) {\n        event.preventDefault();\n        \n        if(callback != null){\n            callbackParams = callbackParams == null ? [] : callbackParams;\n            callback(event.target, ...callbackParams);   \n        }\n\n        $(\u0060#${menuName}\u0060).menu( \"toggle\", event.pageX, event.pageY );\n    });\n}\n\nfunction openModal(btnId,page,params){\n    const name = \"Open Modal Form\";\n\n    const data = {\n        x01: btnId,\n        x02: page,\n        x03: params,\n        pageItems : [\"P2_ACTIVE_ID\"]\n    };\n\n    const callbackActions = {\n        success : function(returnData){\n            eval(returnData);\n        },\n        dataType : \"text\"\n    }\n\n    apex.server.process(name, data, callbackActions);\n}"
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"38951710944896948817"
+     ,"Identification":{
+        "Title":"New"
+       ,"Type":"Static Content"
+      }
+     ,"Source":{
+        "HTML Code":"\u003Cimg src=\"#WORKSPACE_FILES#image\/context-menu.png#\"\/\u003E"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+}

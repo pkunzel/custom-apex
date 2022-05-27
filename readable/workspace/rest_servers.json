@@ -1,0 +1,15 @@
+[
+  {
+    "id":"39175624101693395192"
+   ,"Identification":{
+      "Name":"itunes-apple-com"
+    }
+   ,"Endpoint URL":{
+      "URL":"https:\/\/itunes.apple.com\/"
+    }
+   ,"Advanced":{
+      "Static ID":"itunes_apple_com"
+     ,"Prompt On Install":false
+    }
+  }
+]

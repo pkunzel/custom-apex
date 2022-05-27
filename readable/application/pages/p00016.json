@@ -1,0 +1,333 @@
+{
+  "id":"16"
+ ,"Identification":{
+    "Name":"Input Columns"
+   ,"Alias":"INPUT-COLUMNS"
+   ,"Title":"Input Columns"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"26813295514800060605"
+     ,"Identification":{
+        "Title":"Report 1"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Table \/ View"
+       ,"Table Owner":"Parsing Schema"
+       ,"Table Name":"PRODUCTS"
+       ,"Include ROWID Column":false
+      }
+     ,"Order By":{
+        "Type":"None"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":15
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (45607881189458910543)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (with next and previous links)"
+         ,"Display Position":"Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":500
+        }
+       ,"Messages":{
+          "When No Data Found":"No data found."
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":true
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":true
+         ,"Link Text":"Download"
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"26813295901891060606"
+         ,"Identification":{
+            "Column Name":"ID"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Id"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Default Sequence":"1"
+           ,"Direction":"Ascending"
+           ,"Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"26813296388275060606"
+         ,"Identification":{
+            "Column Name":"NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"26813296754937060606"
+         ,"Identification":{
+            "Column Name":"DESCRIPTION"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Description"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"26813297105343060606"
+         ,"Identification":{
+            "Column Name":"SKU"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Sku"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"26813297587068060607"
+         ,"Identification":{
+            "Column Name":"UNIT"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Unit"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"26813297912147060607"
+         ,"Identification":{
+            "Column Name":"UNIT_PRICE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Unit Price"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":60
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+  ]
+}

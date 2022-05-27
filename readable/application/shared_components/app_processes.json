@@ -1,0 +1,24 @@
+[
+  {
+    "id":"51615185304009615969"
+   ,"Identification":{
+      "Name":"Open Modal"
+     ,"Type":"NATIVE_PLSQL"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Language":"PL\/SQL"
+     ,"PL\/SQL Code":"DECLARE\r\n    l_url varchar2(2000);\r\n    l_app number := v(\u0027APP_ID\u0027);\r\n    l_session number := v(\u0027APP_SESSION\u0027);\r\nBEGIN\r\n    l_url := APEX_UTIL.PREPARE_URL(\r\n        p_url =\u003E \u0027f?p=\u0027 || l_app || \u0027:\u0027|| apex_application.g_x01 ||\u0027:\u0027||l_session||\u0027::NO::\u0027||apex_application.g_x02,\r\n        p_checksum_type =\u003E \u0027SESSION\u0027);\r\n    \r\n    htp.p(l_url);\r\nEND;"
+    }
+   ,"Execution Options":{
+      "Sequence":1
+     ,"Point":"Ajax Callback"
+    }
+   ,"Server-side Condition":{
+      "Type":"Always"
+    }
+   ,"Security":{
+      "Authorization Scheme":"Must Not Be Public User"
+    }
+  }
+]

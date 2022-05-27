@@ -1,0 +1,183 @@
+{
+  "id":"3"
+ ,"Identification":{
+    "Name":"List View 2"
+   ,"Alias":"LIST-VIEW-2"
+   ,"Title":"List View 2"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+   ,"CSS Classes":[
+      "ui-colors"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"JavaScript":{
+    "Execute when Page Loads":"const titleBaseHeight = 52;\nconst itemHeight = document.querySelector(\".details\").scrollHeight;\nconst titlesHeight = document.querySelectorAll(\".a-ListView-item\").length * titleBaseHeight;\n\ndocument.querySelector(\"#region-customers ul\").style.height = (itemHeight + titlesHeight) + \"px\";\n\ndocument.querySelector(\".a-ListView\").classList.add(\u0027u-colors\u0027);"
+  }
+ ,"CSS":{
+    "Inline":".a-ListView-item.ui-body-inherit {\n  display:grid;\n  \n  padding: 0;\n  align-self:start; \n  box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);\n  border-top: 1px solid #0000005e;\n}\n\n.list-file{\n    display: grid;\n    grid-auto-rows:40px;\n    grid-template-columns: 50% 50%;\n    padding: 5px;\n    overflow: hidden;\n}\n\n.list-file:hover{\n    overflow: visible;\n}\n\n.list-file:hover .details{\n    z-index: 99;\n    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);\n    height: fit-content;\n    height: -moz-max-content;\n}\n\n.list-file div{\n    background-color: inherit;\n}\n\n.details{\n    padding: 5px;\n}"
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"23042399750704194505"
+     ,"Identification":{
+        "Title":"List View using the Theme Roller\u0027s colors"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Hero (45607842456419910498)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-HeroRegion--hideIcon"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"48648287276090755329"
+     ,"Identification":{
+        "Title":"Customers List"
+       ,"Type":"List View"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select ID,\n       FIRST_NAME,\n       LAST_NAME,\n       EMAIL,\n       CITY,\n       COUNTRY,\n       GENDER,\n       to_char(DATE_OF_BIRTH,\u0027RRRR\/MM\/DD\u0027) DATE_OF_BIRTH,\n       PHONE,\n       POSTAL_CODE\n  from CUSTOMERS"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"4"
+       ,"New Column":true
+       ,"Column Span":"6"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Static ID":"region-customers"
+       ,"Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"This list view changes all it\u0027s colors based on the custom colors from theme roller. the goal is to keep the layout definition confgure by it and not from external files."
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Features":"Advanced Formatting"
+         ,"Text Formatting":"\u003Cdiv class=\"list-file u-color\" data-customer-name=\"\u0026LAST_NAME., \u0026FIRST_NAME.\"\u003E\n    \u003Cdiv\u003E\n        \u003Ch3\u003E\u0026LAST_NAME., \u0026FIRST_NAME.\u003C\/h3\u003E\n    \u003C\/div\u003E\n    \u003Cdiv class=\"details\"\u003E\n        \u003Cp\u003E\u003Cstrong\u003EDOB: \u003C\/strong\u003E\u0026DATE_OF_BIRTH.\u003C\/p\u003E\n        \u003Cp\u003E\u003Cstrong\u003ECity: \u003C\/strong\u003E\u0026CITY. - \u0026COUNTRY.\u003C\/p\u003E\n        \u003Cp\u003E\u003Cstrong\u003EE-mail: \u003C\/strong\u003E\u0026EMAIL.\u003C\/p\u003E\n        \u003Cp\u003E\u003Cstrong\u003EPhone: \u003C\/strong\u003E\u0026PHONE.\u003C\/p\u003E\n    \u003C\/div\u003E\n\u003C\/div\u003E"
+        }
+       ,"Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":30
+        }
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"23042399566470194503"
+     ,"Identification":{
+        "Name":"Configure Draggables"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.READY"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"23042399696712194504"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"document.querySelector(\"#region-customers ul\").classList.add(\u0027drag-container\u0027);\n\nArray.from(document.querySelectorAll(\"#region-customers ul li\")).forEach( item =\u003E {\n    item.setAttribute(\u0027draggable\u0027,true); \n    item.classList.add(\u0027draggable\u0027) \n});\n\nconst draggables = document.querySelectorAll(\".draggable\");\nconst containers = document.querySelectorAll(\".drag-container\");\n\ndraggables.forEach((draggable) =\u003E {\n\tdraggable.addEventListener(\"dragstart\", () =\u003E {\n\t\tdraggable.classList.add(\"dragging\");\n\t});\n\n\tdraggable.addEventListener(\"dragend\", () =\u003E {\n\t\tdraggable.classList.remove(\"dragging\");\n\t});\n});\n\ncontainers.forEach((container) =\u003E {\n\tcontainer.addEventListener(\"dragover\", (e) =\u003E {\n\t\te.preventDefault();\n\n\t\tconst afterElement = getDragAfterElement(container, e.clientY);\n\t\tconst draggable = document.querySelector(\".dragging\");\n\n\t\tif(afterElement == null){\n\t\t\tcontainer.appendChild(draggable);\n\t\t}\n\t\telse{\n\t\t\tcontainer.insertBefore(draggable, afterElement);\n\t\t}\n\t\t\n\t});\n});\n\nfunction getDragAfterElement(container, y) {\n\tconst draggableElements = [...container.querySelectorAll(\".draggable:not(.dragging)\")];\n\n\treturn draggableElements.reduce(\n\t\t(closest, child) =\u003E {\n\t\t\tconst box = child.getBoundingClientRect();\n\t\t\tconst offset = y - box.top - box.height \/ 2;\n\n\t\t\t\/\/ above the hovering element\n\t\t\tif (offset \u003C 0 \u0026\u0026 offset \u003E closest.offset) {\n\t\t\t\treturn { offset: offset, element: child };\n\t\t\t}else{\n\t\t\t\treturn closest;\n\t\t\t}\n\t\t},\n\t\t{ offset: Number.NEGATIVE_INFINITY }\n\t).element;\n}"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"Configure Draggables (23042399566470194503)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "id":"45608042670535910611"
+   ,"Identification":{
+      "Name":"LOGIN_REMEMBER_USERNAME"
+    }
+   ,"Source":{
+      "Location":"Static Values"
+    }
+   ,"Entries":[
+      {
+        "id":"45608043008135910612"
+       ,"Entry":{
+          "Sequence":10
+         ,"Display":"Remember username"
+         ,"Return":"Y"
+        }
+      }
+    ]
+  }
+]

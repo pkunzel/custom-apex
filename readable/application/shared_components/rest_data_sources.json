@@ -1,0 +1,809 @@
+[
+  {
+    "id":"38950771525990882145"
+   ,"Identification":{
+      "Name":"API Itunes"
+     ,"Type":"HTTP"
+    }
+   ,"Source":{
+      "Remote Server":"itunes-apple-com (39175624101693395192)"
+     ,"URL Path Prefix":"search\/"
+    }
+   ,"Settings":{
+      "Pagination Type":"NO PAGINATION"
+    }
+   ,"Synchronization":{
+      "Job is Active":false
+     ,"Local Table Owner":"Parsing Schema"
+    }
+   ,"Advanced":{
+      "Static ID":"API_Itunes"
+     ,"Pass ECID":true
+    }
+   ,"Parameters":[
+      {
+        "id":"38950772121352882147"
+       ,"Identification":{
+          "Name":"entity"
+        }
+       ,"Value":{
+          "Type":"Query String variable"
+         ,"Direction":"In"
+         ,"Static":true
+         ,"Value":"musicVideo"
+        }
+       ,"Advanced":{
+          "Use for Row Search":false
+         ,"Omit when value is empty":false
+        }
+      }
+     ,{
+        "id":"38950772552739882148"
+       ,"Identification":{
+          "Name":"term"
+        }
+       ,"Value":{
+          "Type":"Query String variable"
+         ,"Direction":"In"
+         ,"Static":false
+         ,"Value":"beyounce"
+         ,"Required":false
+        }
+       ,"Advanced":{
+          "Use for Row Search":false
+         ,"Omit when value is empty":false
+        }
+      }
+    ]
+   ,"Data Profiles":{
+      "id":"38950761408410882139"
+     ,"Identification":{
+        "Name":"API Itunes"
+      }
+     ,"Data Profile":{
+        "Format":"JSON"
+       ,"Row Selector":"results"
+       ,"Contains Single Row":false
+      }
+     ,"Advanced":{
+        "Encoding":"Database Character Set"
+      }
+     ,"Columns":[
+        {
+          "id":"38950761697256882140"
+         ,"Identification":{
+            "Column Name":"COLLECTIONARTISTVIEWURL"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"collectionArtistViewUrl"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":33
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950761942424882141"
+         ,"Identification":{
+            "Column Name":"KIND"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"kind"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":1
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950762232637882141"
+         ,"Identification":{
+            "Column Name":"COUNTRY"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"country"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":2
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950762518412882141"
+         ,"Identification":{
+            "Column Name":"TRACKID"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"NUMBER"
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"trackId"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":3
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950762839920882141"
+         ,"Identification":{
+            "Column Name":"ARTISTID"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"NUMBER"
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"artistId"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":4
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950763104541882141"
+         ,"Identification":{
+            "Column Name":"CURRENCY"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"currency"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":5
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950763441376882141"
+         ,"Identification":{
+            "Column Name":"DISCCOUNT"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"NUMBER"
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"discCount"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":6
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950763707999882141"
+         ,"Identification":{
+            "Column Name":"TRACKNAME"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"trackName"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":7
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950764094252882141"
+         ,"Identification":{
+            "Column Name":"ARTISTNAME"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"artistName"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":8
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950764353656882141"
+         ,"Identification":{
+            "Column Name":"DISCNUMBER"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"NUMBER"
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"discNumber"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":9
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950764673118882142"
+         ,"Identification":{
+            "Column Name":"PREVIEWURL"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"previewUrl"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":10
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950764989103882142"
+         ,"Identification":{
+            "Column Name":"TRACKCOUNT"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"NUMBER"
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"trackCount"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":11
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950765242310882142"
+         ,"Identification":{
+            "Column Name":"TRACKPRICE"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"NUMBER"
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"trackPrice"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":12
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950765529616882142"
+         ,"Identification":{
+            "Column Name":"RELEASEDATE"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"TIMESTAMP WITH TIME ZONE"
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"releaseDate"
+           ,"Format Mask":"YYYY\"-\"MM\"-\"DD\"T\"HH24\":\"MI:SSTZR"
+           ,"Has Time Zone":true
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":13
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950765883758882142"
+         ,"Identification":{
+            "Column Name":"TRACKNUMBER"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"NUMBER"
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"trackNumber"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":14
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950766146070882142"
+         ,"Identification":{
+            "Column Name":"WRAPPERTYPE"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"wrapperType"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":15
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950766455175882142"
+         ,"Identification":{
+            "Column Name":"ARTWORKURL30"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"artworkUrl30"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":16
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950766723928882142"
+         ,"Identification":{
+            "Column Name":"ARTWORKURL60"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"artworkUrl60"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":17
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950767007437882142"
+         ,"Identification":{
+            "Column Name":"COLLECTIONID"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"NUMBER"
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"collectionId"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":18
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950767365068882143"
+         ,"Identification":{
+            "Column Name":"TRACKVIEWURL"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"trackViewUrl"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":19
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950767642961882143"
+         ,"Identification":{
+            "Column Name":"ARTISTVIEWURL"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"artistViewUrl"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":20
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950767986035882143"
+         ,"Identification":{
+            "Column Name":"ARTWORKURL100"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"artworkUrl100"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":21
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950768261593882143"
+         ,"Identification":{
+            "Column Name":"COLLECTIONNAME"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"collectionName"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":22
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950768582426882143"
+         ,"Identification":{
+            "Column Name":"COLLECTIONPRICE"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"NUMBER"
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"collectionPrice"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":23
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950768893178882143"
+         ,"Identification":{
+            "Column Name":"TRACKTIMEMILLIS"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"NUMBER"
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"trackTimeMillis"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":24
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950769102314882143"
+         ,"Identification":{
+            "Column Name":"PRIMARYGENRENAME"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"primaryGenreName"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":25
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950769474870882143"
+         ,"Identification":{
+            "Column Name":"COLLECTIONVIEWURL"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"collectionViewUrl"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":26
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950769795790882143"
+         ,"Identification":{
+            "Column Name":"TRACKCENSOREDNAME"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"trackCensoredName"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":27
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950770042612882144"
+         ,"Identification":{
+            "Column Name":"TRACKEXPLICITNESS"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"trackExplicitness"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":28
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950770328733882144"
+         ,"Identification":{
+            "Column Name":"COLLECTIONARTISTID"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"collectionArtistId"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":29
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950770603056882144"
+         ,"Identification":{
+            "Column Name":"CONTENTADVISORYRATING"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"contentAdvisoryRating"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":30
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950770904027882144"
+         ,"Identification":{
+            "Column Name":"COLLECTIONCENSOREDNAME"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"collectionCensoredName"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":31
+           ,"Hidden":false
+          }
+        }
+       ,{
+          "id":"38950771268310882144"
+         ,"Identification":{
+            "Column Name":"COLLECTIONEXPLICITNESS"
+          }
+         ,"Source":{
+            "Type":"Data"
+           ,"Data Type":"VARCHAR2"
+           ,"Maximum Length":4000
+           ,"Primary Key":false
+          }
+         ,"Parsing":{
+            "Path Expression":"collectionExplicitness"
+          }
+         ,"Remote REST Data Source Server":{
+            "Filterable":true
+          }
+         ,"Advanced":{
+            "Sequence":32
+           ,"Hidden":false
+          }
+        }
+      ]
+    }
+   ,"Operations":[
+      {
+        "id":"38950771705327882146"
+       ,"Operation":{
+          "URL Pattern":"."
+         ,"HTTP Method":"GET"
+         ,"Database Operation":"Fetch Rows"
+        }
+       ,"Remote Cache":{
+          "Caching":"Disabled"
+        }
+       ,"Advanced":{
+          "Allow Fetching All Rows":false
+         ,"Force Raise HTTP-404 Error":false
+        }
+      }
+    ]
+  }
+]

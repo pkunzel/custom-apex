@@ -1,0 +1,261 @@
+{
+  "id":"6"
+ ,"Identification":{
+    "Name":"drag and drop"
+   ,"Alias":"DRAG-AND-DROP"
+   ,"Title":"drag and drop"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"JavaScript":{
+    "Function and Global Variable Declaration":"let counter = 5;"
+  }
+ ,"CSS":{
+    "Inline":".drag-container{\n  background-color: rgb(232, 232, 232);\n  padding: 2rem;\n  margin-top: 1rem;\n}\n\n.draggable{\n  padding: 1rem;\n  background-color: white;\n  border: 1px solid black;\n  cursor: move;;\n  margin-top: 10px;\n}\n\n.draggable.dragging{\n  opacity: 0.5;\n}"
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"51794314479883998928"
+     ,"Identification":{
+        "Title":"Simple Drag n Drop Region"
+       ,"Type":"Static Content"
+      }
+     ,"Source":{
+        "HTML Code":"\u003Cdiv class=\"drag-container\"\u003E\n    \u003Cp class=\"draggable\" draggable=\"true\"\u003E1\u003C\/p\u003E\n    \u003Cp class=\"draggable\" draggable=\"true\"\u003E2\u003C\/p\u003E\n    \u003Cp class=\"draggable\" draggable=\"true\"\u003E3\u003C\/p\u003E\n    \u003Cp class=\"draggable\" draggable=\"true\"\u003E4\u003C\/p\u003E\n\u003C\/div\u003E"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"18446365656171261337"
+     ,"Identification":{
+        "Button Name":"GETCURRENTORDER"
+       ,"Label":"Get Current Order"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Simple Drag n Drop Region (51794314479883998928)"
+       ,"Position":"TOP"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Horizontal Alignment":"Left"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (45608014882505910574)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--large"
+         ,"t-Button--iconLeft"
+        ]
+       ,"Icon":"fa-list-ol"
+      }
+     ,"Behavior":{
+        "Action":"Defined by Dynamic Action"
+       ,"Execute Validations":true
+      }
+    }
+   ,{
+      "id":"51794314562077998929"
+     ,"Identification":{
+        "Button Name":"Add"
+       ,"Label":"Add"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Simple Drag n Drop Region (51794314479883998928)"
+       ,"Position":"TOP"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Horizontal Alignment":"Left"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (45608014882505910574)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--large"
+         ,"t-Button--primary"
+         ,"t-Button--iconLeft"
+        ]
+       ,"Icon":"fa-plus"
+      }
+     ,"Behavior":{
+        "Action":"Defined by Dynamic Action"
+       ,"Execute Validations":true
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"18446365744623261338"
+     ,"Identification":{
+        "Name":"New"
+      }
+     ,"Execution Options":{
+        "Sequence":30
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"Button"
+       ,"Button":"GETCURRENTORDER (18446365656171261337)"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"18446365896577261339"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"const draggables = Array.from(document.querySelectorAll(\u0027.draggable\u0027))\n                        .map(item=\u003E item.textContent)\n                        .join(\u0027\u005Cn\u0027)\n\napex.message.alert(draggables);"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"New (18446365744623261338)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"51794314641583998930"
+     ,"Identification":{
+        "Name":"Add New Element"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"Button"
+       ,"Button":"Add (51794314562077998929)"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"51794314700918998931"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"let parag = document.createElement(\"p\");\nparag.classList.add(\u0027draggable\u0027);\nparag.setAttribute(\u0027draggable\u0027,\u0027true\u0027);\nparag.textContent = counter++;\n\nparag.addEventListener(\"dragstart\", () =\u003E {\n    parag.classList.add(\"dragging\");\n});\n\nparag.addEventListener(\"dragend\", () =\u003E {\n    parag.classList.remove(\"dragging\");\n});\n\ndocument.querySelector(\".drag-container\").appendChild(parag);"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"Add New Element (51794314641583998930)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"51794314803939998932"
+     ,"Identification":{
+        "Name":"Drag N Drop Events"
+      }
+     ,"Execution Options":{
+        "Sequence":20
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.READY"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"51794314900471998933"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"const draggables = document.querySelectorAll(\".draggable\");\nconst containers = document.querySelectorAll(\".drag-container\");\n\ndraggables.forEach((draggable) =\u003E {\n\tdraggable.addEventListener(\"dragstart\", () =\u003E {\n\t\tdraggable.classList.add(\"dragging\");\n\t});\n\n\tdraggable.addEventListener(\"dragend\", () =\u003E {\n\t\tdraggable.classList.remove(\"dragging\");\n\t});\n});\n\ncontainers.forEach((container) =\u003E {\n\tcontainer.addEventListener(\"dragover\", (e) =\u003E {\n\t\te.preventDefault();\n\n\t\tconst afterElement = getDragAfterElement(container, e.clientY);\n\t\tconst draggable = document.querySelector(\".dragging\");\n\n\t\tif(afterElement == null){\n\t\t\tcontainer.appendChild(draggable);\n\t\t}\n\t\telse{\n\t\t\tcontainer.insertBefore(draggable, afterElement);\n\t\t}\n\t\t\n\t});\n});\n\nfunction getDragAfterElement(container, y) {\n\tconst draggableElements = [...container.querySelectorAll(\".draggable:not(.dragging)\")];\n\n\treturn draggableElements.reduce(\n\t\t(closest, child) =\u003E {\n\t\t\tconst box = child.getBoundingClientRect();\n\t\t\tconst offset = y - box.top - box.height \/ 2;\n\n\t\t\t\/\/ above the hovering element\n\t\t\tif (offset \u003C 0 \u0026\u0026 offset \u003E closest.offset) {\n\t\t\t\treturn { offset: offset, element: child };\n\t\t\t}else{\n\t\t\t\treturn closest;\n\t\t\t}\n\t\t},\n\t\t{ offset: Number.NEGATIVE_INFINITY }\n\t).element;\n}"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"Drag N Drop Events (51794314803939998932)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

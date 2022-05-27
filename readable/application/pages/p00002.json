@@ -1,0 +1,738 @@
+{
+  "id":"2"
+ ,"Identification":{
+    "Name":"List View"
+   ,"Alias":"LIST-VIEW"
+   ,"Title":"List View"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"CSS":{
+    "Inline":".customListView{\n\tdisplay:grid;\n  \tgap:2px;\n  \talign-items:center;\n  \twidth:100%;\n  \ttext-align:center;\n  \tcursor: pointer;\n  \tgrid-template-columns: 30px auto;\n}\n\n.customListView .listIcon, .listTitle{\n\tbackground-color: #999;\n  \tcolor: white;\n    margin: 0;\n    height: 100%;\n\n    width: 100%;\n    line-height: 50px;\n}\n\n.customListView .listIcon:hover,.listTitle:hover{\n  background-color:#525252;\n}\n\n.selected{\n    background-color: darkgreen;\n}"
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"23042400234950194510"
+     ,"Identification":{
+        "Title":"Custom List View with multiselect"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Hero (45607842456419910498)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-HeroRegion--hideIcon"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"29863277429543855033"
+     ,"Identification":{
+        "Title":"Customer List"
+       ,"Type":"List View"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select ID,\n       FIRST_NAME,\n       LAST_NAME,\n       EMAIL,\n       CITY,\n       COUNTRY,\n       GENDER,\n       DATE_OF_BIRTH,\n       PHONE,\n       POSTAL_CODE\n  from CUSTOMERS"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"4"
+       ,"New Column":true
+       ,"Column Span":"6"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Features":"Advanced Formatting"
+         ,"Text Formatting":"\u003Cdiv class=\"customListView\"\u003E\n    \u003Ci class=\"fa fa-edit listIcon editGrupo open-modal\" \n       data-customer-id=\"\u0026ID.\"\u003E\u003C\/i\u003E\n    \n    \u003Cspan class=\"listTitle selectGrupo\" \n          data-customer-name=\"\u0026FIRST_NAME. \u0026LAST_NAME.\"\n          data-customer-email=\"\u0026EMAIL.\"\n          data-customer-city=\"\u0026CITY. - \u0026COUNTRY.\"\u003E\u0026FIRST_NAME. \u0026LAST_NAME.\u003C\/span\u003E\n\u003C\/div\u003E"
+        }
+       ,"Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":15
+        }
+      }
+    }
+   ,{
+      "id":"29863277861400855037"
+     ,"Identification":{
+        "Title":"HTML"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Parent Region":"Source (51794314119638998925)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (45607823258133910447)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"29863278144543855040"
+     ,"Identification":{
+        "Title":"CSS"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":60
+       ,"Parent Region":"Source (51794314119638998925)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (45607823258133910447)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"51794313932279998923"
+     ,"Identification":{
+        "Title":"JS"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":70
+       ,"Parent Region":"Source (51794314119638998925)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (45607823258133910447)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"51794314119638998925"
+     ,"Identification":{
+        "Title":"Source"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server-side Condition":{
+        "Type":"Never"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"51794314296001998926"
+     ,"Identification":{
+        "Title":"Ajax Callback Process"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":80
+       ,"Parent Region":"Source (51794314119638998925)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (45607823258133910447)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"29863278058947855039"
+     ,"Identification":{
+        "Name":"P2_CUSTOM1_HTML"
+       ,"Type":"Textarea"
+      }
+     ,"Label":{
+        "Label":"HTML"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Resizable":true
+       ,"Auto-Height":false
+       ,"Character Counter":false
+       ,"Trim Spaces":"Leading and Trailing"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"HTML (29863277861400855037)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (45608013698305910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+       ,"Height":5
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Default":{
+        "Type":"Static"
+       ,"Static Value":"\u003Cdiv class=\"customListView\"\u003E\n    \u003Ci class=\"fa fa-edit listIcon editGrupo\"\u003E\u003C\/i\u003E\n    \u003Cspan class=\"listTitle selectGrupo\"\u003E\u0026STATE_NAME.\u003C\/span\u003E\n\u003C\/div\u003E\n"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"29863278349316855042"
+     ,"Identification":{
+        "Name":"P2_CUSTOM1_CSS"
+       ,"Type":"Textarea"
+      }
+     ,"Label":{
+        "Label":"CSS"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Resizable":true
+       ,"Auto-Height":true
+       ,"Character Counter":false
+       ,"Trim Spaces":"Leading and Trailing"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"CSS (29863278144543855040)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (45608013698305910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+       ,"Height":5
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Default":{
+        "Type":"Static"
+       ,"Static Value":".customListView{\n    display:grid;\n    gap:2px;\n    align-items:center;\n    width:100%;\n    text-align:center;\n    cursor: pointer;\n    grid-template-columns: 30px auto;\n}\n\n.customListView .listIcon, .listTitle{\n    background-color: #999;\n    color: white;\n    margin: 0;\n    height: 100%;\n\n    width: 100%;\n    line-height: 50px;\n}\n\n.customListView .listIcon:hover,.listTitle:hover{\n    background-color:#525252;\n}"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"51794314010048998924"
+     ,"Identification":{
+        "Name":"P2_CUSTOM1_JS"
+       ,"Type":"Textarea"
+      }
+     ,"Label":{
+        "Label":"JavaScript"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Resizable":true
+       ,"Auto-Height":true
+       ,"Character Counter":false
+       ,"Trim Spaces":"Leading and Trailing"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"JS (51794313932279998923)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (45608013698305910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+       ,"Height":5
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Default":{
+        "Type":"Static"
+       ,"Static Value":"\/\/ Dynamic Action\n\/\/ Event : Click\n\/\/ Selection Type: jQuery Selector\n\/\/ jQuery Selector : .open-modal\n\nconst processName = \"Open Modal\";\n\nconst dataSent = {\n    x01 : this.triggeringElement.getAttribute(\"data-customer-id\")\n};\n\nconst ajaxResponse = {\n    dataType : \"text\",\n    success : (response) =\u003E eval(response),\n    error : (a,b,c) =\u003E console.error(a,b,c)\n}\n\napex.server.process(processName, dataSent, ajaxResponse);"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"51794314323517998927"
+     ,"Identification":{
+        "Name":"P2_CUSTOM1_PLSQL"
+       ,"Type":"Textarea"
+      }
+     ,"Label":{
+        "Label":"PL\/SQL"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Resizable":true
+       ,"Auto-Height":true
+       ,"Character Counter":false
+       ,"Trim Spaces":"Leading and Trailing"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Ajax Callback Process (51794314296001998926)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (45608013698305910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+       ,"Height":5
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Default":{
+        "Type":"Static"
+       ,"Static Value":"-- Proccess name : Open Modal\n-- Proccess type : Ajax Callback\n\nDECLARE\n    l_app number := v(\u0027APP_ID\u0027);\n    l_session number := v(\u0027APP_SESSION\u0027);\nBEGIN\n    htp.p(APEX_UTIL.PREPARE_URL(\n        p_url =\u003E \u0027f?p=\u0027 || l_app || \u0027:5:\u0027||l_session||\u0027::NO::P5_CUSTOMER_ID:\u0027 || apex_application.g_x01,\n        p_checksum_type =\u003E \u0027SESSION\u0027));\nEND;"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"18446365330423261334"
+     ,"Identification":{
+        "Button Name":"VIEW-SELECTED"
+       ,"Label":"View Selected"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Customer List (29863277429543855033)"
+       ,"Position":"EDIT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (45608014793597910574)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Defined by Dynamic Action"
+       ,"Execute Validations":true
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"18446365048296261331"
+     ,"Identification":{
+        "Name":"Alert Customer List"
+      }
+     ,"Execution Options":{
+        "Sequence":20
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"jQuery Selector"
+       ,"jQuery Selector":".selectGrupo"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"18446365281186261333"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"this.triggeringElement.classList.toggle(\u0027selected\u0027)\n"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"Alert Customer List (18446365048296261331)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"18446365496729261335"
+     ,"Identification":{
+        "Name":"Select Customers"
+      }
+     ,"Execution Options":{
+        "Sequence":30
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"Button"
+       ,"Button":"VIEW-SELECTED (18446365330423261334)"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"18446365590485261336"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"const seletedCustomers = Array.from(document.querySelectorAll(\u0027.selected\u0027)).map(customer =\u003E customer.getAttribute(\u0027data-customer-name\u0027));\n\nconst seletedCustomersToString = seletedCustomers.join(\u0027\u005Cn\u0027);\n\napex.message.alert(seletedCustomersToString);"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"Select Customers (18446365496729261335)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"48648288561488755342"
+     ,"Identification":{
+        "Name":"Open Modal Form"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"jQuery Selector"
+       ,"jQuery Selector":".open-modal"
+      }
+     ,"Advanced":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"51794313881271998922"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"const processName = \"Open Modal\";\n\nconst dataSent = {\n    x01 : this.triggeringElement.getAttribute(\"data-customer-id\")\n};\n\nconst ajaxResponse = {\n    dataType : \"text\",\n    success : (response) =\u003E eval(response),\n    error : (a,b,c) =\u003E console.error(a,b,c)\n}\n\napex.server.process(processName, dataSent, ajaxResponse);"
+          }
+         ,"Execution Options":{
+            "Sequence":10
+           ,"Event":"Open Modal Form (48648288561488755342)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"51794313707570998921"
+     ,"Identification":{
+        "Name":"Open Modal"
+       ,"Type":"Execute Code"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"DECLARE\n    l_app number := v(\u0027APP_ID\u0027);\n    l_session number := v(\u0027APP_SESSION\u0027);\nBEGIN\n    htp.p(APEX_UTIL.PREPARE_URL(\n        p_url =\u003E \u0027f?p=\u0027 || l_app || \u0027:5:\u0027||l_session||\u0027::NO::P5_ID:\u0027 || apex_application.g_x01,\n        p_checksum_type =\u003E \u0027SESSION\u0027));\nEND;"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+       ,"Point":"Ajax Callback"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+  ]
+}

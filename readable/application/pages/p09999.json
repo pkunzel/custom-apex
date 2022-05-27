@@ -1,0 +1,403 @@
+{
+  "id":"9999"
+ ,"Identification":{
+    "Name":"Login Page"
+   ,"Alias":"LOGIN"
+   ,"Title":"Custom APEX - Sign In"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Login (45607802778967910389)"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"First item on page"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"45608041589868910609"
+     ,"Identification":{
+        "Title":"Custom APEX"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Login (45607850923792910513)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"app-icon"
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"Text (escape special characters)"
+         ,"Show Line Breaks":true
+        }
+      }
+    }
+   ,{
+      "id":"45608046250416910617"
+     ,"Identification":{
+        "Title":"Language Selector"
+       ,"Type":"PL\/SQL Dynamic Content"
+      }
+     ,"Source":{
+        "PL\/SQL Code":"apex_lang.emit_language_selector_list;"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"Custom APEX (45608041589868910609)"
+       ,"Position":"SUB_REGIONS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (45607823258133910447)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"45608041948155910610"
+     ,"Identification":{
+        "Name":"P9999_USERNAME"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Username"
+       ,"Alignment":"Right"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"None"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Custom APEX (45608041589868910609)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (45608013370048910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"fa-user"
+       ,"Width":40
+       ,"Value Placeholder":"Username"
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":100
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"45608042389158910611"
+     ,"Identification":{
+        "Name":"P9999_PASSWORD"
+       ,"Type":"Password"
+      }
+     ,"Label":{
+        "Label":"Password"
+       ,"Alignment":"Right"
+      }
+     ,"Settings":{
+        "Submit when Enter pressed":true
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Custom APEX (45608041589868910609)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (45608013370048910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"fa-key"
+       ,"Width":40
+       ,"Value Placeholder":"Password"
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":100
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"45608043496186910612"
+     ,"Identification":{
+        "Name":"P9999_REMEMBER"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"Remember username"
+       ,"Alignment":"Right"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Custom APEX (45608041589868910609)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (45608013370048910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"Shared Component"
+       ,"List of Values":"LOGIN_REMEMBER_USERNAME (45608042670535910611)"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Request (Memory Only)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":"apex_authentication.persistent_cookies_enabled"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+     ,"Help":{
+        "Help Text":"\u003Cp\u003E\nIf you select this checkbox, the application will save your username in a persistent browser cookie named \"LOGIN_USERNAME_COOKIE\".\nWhen you go to the login page the next time,\nthe username field will be automatically populated with this value.\n\u003C\/p\u003E\n\u003Cp\u003E\nIf you deselect this checkbox and your username is already saved in the cookie,\nthe application will overwrite it with an empty value.\nYou can also use your browser\u0027s developer tools to completely remove the cookie.\n\u003C\/p\u003E"
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"45608044304000910613"
+     ,"Identification":{
+        "Button Name":"LOGIN"
+       ,"Label":"Sign In"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Custom APEX (45608041589868910609)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (45608014793597910574)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"45608044728606910614"
+     ,"Identification":{
+        "Name":"Login"
+       ,"Type":"Execute Code"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"apex_authentication.login(\n    p_username =\u003E :P9999_USERNAME,\n    p_password =\u003E :P9999_PASSWORD );"
+      }
+     ,"Execution Options":{
+        "Sequence":20
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+    }
+   ,{
+      "id":"45608045107581910614"
+     ,"Identification":{
+        "Name":"Set Username Cookie"
+       ,"Type":"Execute Code"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"apex_authentication.send_login_username_cookie (\n    p_username =\u003E lower(:P9999_USERNAME),\n    p_consent  =\u003E :P9999_REMEMBER = \u0027Y\u0027 );"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+    }
+   ,{
+      "id":"45608045544181910615"
+     ,"Identification":{
+        "Name":"Get Username Cookie"
+       ,"Type":"Execute Code"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":":P9999_USERNAME := apex_authentication.get_login_username_cookie;\n:P9999_REMEMBER := case when :P9999_USERNAME is not null then \u0027Y\u0027 end;"
+      }
+     ,"Execution Options":{
+        "Sequence":10
+       ,"Point":"Before Header"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+   ,{
+      "id":"45608045944064910616"
+     ,"Identification":{
+        "Name":"Clear Page(s) Cache"
+       ,"Type":"Clear Session State"
+      }
+     ,"Settings":{
+        "Type":"Clear all Items on the Current Page"
+      }
+     ,"Execution Options":{
+        "Sequence":30
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+    }
+  ]
+}

@@ -1,0 +1,499 @@
+{
+  "id":"7"
+ ,"Identification":{
+    "Name":"Report Icons"
+   ,"Alias":"REPORT-ICONS"
+   ,"Title":"Report Icons"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"4099382683967855785"
+     ,"Identification":{
+        "Title":"Report 1"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select ID,\n       FIRST_NAME,\n       LAST_NAME,\n       EMAIL,\n       CITY,\n       COUNTRY,\n       lower(GENDER) GENDER,\n       case when GENDER = \u0027MALE\u0027 then \u0027lock\u0027 else \u0027unlock\u0027 end IS_LOCKED,\n       DATE_OF_BIRTH,\n       PHONE,\n       POSTAL_CODE\n  from CUSTOMERS"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":15
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (45607881189458910543)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (with next and previous links)"
+         ,"Display Position":"Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":500
+        }
+       ,"Messages":{
+          "When No Data Found":"no data found"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":true
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":true
+         ,"Link Text":"Download"
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"3568895317757554903"
+         ,"Identification":{
+            "Column Name":"IS_LOCKED"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Is Locked"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":110
+           ,"Column Alignment":"center"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Column Formatting":{
+            "HTML Expression":"\u003Ci class=\"fa fa-#IS_LOCKED#\"\u003E\u003C\/i\u003E"
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"4099383047165855786"
+         ,"Identification":{
+            "Column Name":"ID"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Id"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":10
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Default Sequence":"1"
+           ,"Direction":"Ascending"
+           ,"Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"4099383407885855787"
+         ,"Identification":{
+            "Column Name":"FIRST_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"First Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"4099383842751855787"
+         ,"Identification":{
+            "Column Name":"LAST_NAME"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Last Name"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"4099384261601855787"
+         ,"Identification":{
+            "Column Name":"EMAIL"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Email"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"4099384663631855787"
+         ,"Identification":{
+            "Column Name":"CITY"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"City"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"4099385010850855788"
+         ,"Identification":{
+            "Column Name":"COUNTRY"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Country"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":60
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"4099385445016855788"
+         ,"Identification":{
+            "Column Name":"GENDER"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Gender"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":70
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Column Formatting":{
+            "HTML Expression":"\u003Ci class=\"fa fa-#GENDER#\"\u003E\u003C\/i\u003E"
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"4099385859758855788"
+         ,"Identification":{
+            "Column Name":"DATE_OF_BIRTH"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Date Of Birth"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":80
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"4099386266128855788"
+         ,"Identification":{
+            "Column Name":"PHONE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Phone"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":90
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"4099386607406855789"
+         ,"Identification":{
+            "Column Name":"POSTAL_CODE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Postal Code"
+           ,"Alignment":"center"
+          }
+         ,"Layout":{
+            "Sequence":100
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+  ]
+}

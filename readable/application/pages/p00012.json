@@ -1,0 +1,245 @@
+{
+  "id":"12"
+ ,"Identification":{
+    "Name":"Fancy Tree - Right Click"
+   ,"Alias":"FANCY-TREE-RIGHT-CLICK"
+   ,"Title":"Fancy Tree - Right Click"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"23042400900782194517"
+     ,"Identification":{
+        "Title":"New"
+       ,"Type":"APEX FancyTree Select"
+      }
+     ,"Source":{
+        "SQL Query":"SELECT \n\/* REQUIRED - positive number id of the element (should start with 1 or higher) *\/\n     ROWNUM AS ID,\n\/* REQUIRED - positive number id of the parent (top parent should be 0) *\/\n     CASE\n         WHEN ROWNUM \u003C= 2 THEN\n             0\n         ELSE ROUND( ROWNUM \/ 6 )\n     END AS PARENT_ID,\n\/* REQUIRED - title of the item *\/\n     \u0027Item \u0027 || ROWNUM AS TITLE,\/* tooltip for the item *\/\n\/* REQUIRED when use select function - is set to items when selected *\/\n     ROWNUM AS VALUE,\n\/* REQUIRED when use select function - is mapping value for typeSettings in config json *\/\n     CASE\n         WHEN ROWNUM \u003C= 8 THEN\n             10\n         ELSE 20\n     END AS TYPE,\n\/* Optional - set tooltip for this item *\/\n     \u0027This is item \u0027 || ROWNUM AS TOOLTIP,\n\/* Optional - set custom icon for item *\/\n     CASE\n         WHEN ROWNUM \u003C= 8 THEN\n             \u0027fa fa-folder-o\u0027\n         ELSE \u0027fa fa-file-o\u0027\n     END AS ICON,\n\/* Optional - set which nodes should be selcted on load (0 or null - not selected; 1 - selected)*\/\n     CASE\n         WHEN ROWNUM \u003C= 8 THEN\n             1\n     END AS SELECTED,\n\/* Optional - set if this item is expanded or not (0 or null - not expanded; 1 - expanded)*\/\n     NULL EXPANDED,\n\/* Optional - enable or disable checkbox for this item (0 or null - no checkbox; 1 - checkbox)*\/\n     0 AS CHECKBOX,\n\/* Optional - used to set item read only (0 or null - selectable; 1 - unselectable)*\/\n     0 AS UNSELECTABLE\n\/* activate link on click of the node *\/\n     --,\u0027https:\/\/linktr.ee\/ronny.weiss\u0027 AS LINK\n FROM\n     DUAL\n CONNECT BY\n     ROWNUM \u003C= 30"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Escape special characters":true
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "ConfigJSON":"{\n  \"animationDuration\": 200,\n  \"autoExpand2Level\": 0,\n  \"checkbox\": \"fa-square-o\",\n  \"checkboxSelected\": \"fa-check-square\",\n  \"checkboxUnknown\": \"fa-square\",\n  \"enableCheckBox\": false,\n  \"forceSelectionSet\": true,\n  \"markNodesWithChildren\": false,\n  \"markerModifier\": \"fam-plus fam-is-info\",\n  \"openParentOfActiveNode\": true,\n  \"openParentOfSelected\": true,\n  \"refresh\": 0,\n  \"search\": {\n    \"autoExpand\": true,\n    \"leavesOnly\": false,\n    \"highlight\": true,\n    \"counter\": true,\n    \"hideUnmatched\": true,\n    \"debounce\": {\n      \"enabled\": true,\n      \"time\": 400\n    }\n  },\n  \"selectMode\": 2,\n  \"setActiveNode\": true,\n  \"setItemsOnInit\": false,\n  \"typeSettings\": [\n    {\n      \"id\": 10,\n      \"storeItem\": \"P12_TYPE_10\",\n      \"icon\": \"fa-folder-o\"\n    }, {\n      \"id\": 20,\n      \"storeItem\": \"P12_TYPE_20\",\n      \"icon\": \"fa-file-o\"\n    }\n  ]\n}"
+         ,"When Error occured":"Error occured! Please check browser console for more information."
+         ,"Use Client Side Caching":false
+        }
+      }
+    }
+   ,{
+      "id":"23042401038063194518"
+     ,"Identification":{
+        "Title":"New"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (45607852257092910514)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"23042401108683194519"
+     ,"Identification":{
+        "Name":"P12_TYPE_10"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Type 10"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"New (23042401038063194518)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (45608013698305910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"23042401201536194520"
+     ,"Identification":{
+        "Name":"P12_TYPE_20"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Type 20"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"New (23042401038063194518)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (45608013698305910572)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+       ,"Maintain Session State":"Per Session (Disk)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+}

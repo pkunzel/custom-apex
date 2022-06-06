@@ -68,11 +68,7 @@
    ,"Text":"Custom APEX"
   }
  ,"Progressive Web App":{
-    "Enable":true
-   ,"Installable":true
-   ,"Display":"Standalone"
-   ,"Screen Orientation":"Any"
-   ,"iOS Status Bar Style":"Translucent"
+    "Enable":false
   }
  ,"Substitutions":[
     {

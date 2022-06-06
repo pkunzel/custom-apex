@@ -39,13 +39,13 @@
   }
  ,"Regions":[
     {
-      "id":"38951712563050948833"
+      "id":"19913797215103736906"
      ,"Identification":{
         "Title":"New"
        ,"Type":"List"
       }
      ,"Source":{
-        "List":"Desktop Navigation Menu (45607596564862910360)"
+        "List":"Home Navigation List (20778994506051352009)"
       }
      ,"Layout":{
         "Sequence":10
@@ -58,7 +58,7 @@
        ,"Column Span":"Automatic"
       }
      ,"Appearance":{
-        "Template":"Cards Container (45607826827263910454)"
+        "Template":"Blank with Attributes (45607823258133910447)"
        ,"Template Options":[
           "#DEFAULT#"
         ]
@@ -80,11 +80,11 @@
          ,"Template Options":[
             "#DEFAULT#"
            ,"u-colors"
-           ,"t-Cards--compact"
+           ,"t-Cards--featured force-fa-lg"
            ,"t-Cards--displayIcons"
-           ,"t-Cards--3cols"
+           ,"t-Cards--5cols"
            ,"t-Cards--hideBody"
-           ,"t-Cards--animColorFill"
+           ,"t-Cards--animRaiseCard"
           ]
         }
       }

@@ -1,0 +1,142 @@
+{
+  "id":"22"
+ ,"Identification":{
+    "Name":"Swipe Actions - JET"
+   ,"Alias":"SWIPE-ACTIONS-JET"
+   ,"Title":"Swipe Actions - JET"
+  }
+ ,"Appearance":{
+    "User Interface":"Desktop (45608037443839910598)"
+   ,"Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"JavaScript":{
+    "File URLs":[
+      "[require jet]"
+    ]
+   ,"Execute when Page Loads":"  require([\"require\", \"exports\", \"knockout\", \"ojs\/ojbootstrap\", \"ojs\/ojarraydataprovider\", \"ojs\/ojknockout\", \"ojs\/ojswipeactions\", \"ojs\/ojlistview\", \"ojs\/ojmenu\", \"ojs\/ojlistitemlayout\"], function (require, exports, ko, ojbootstrap_1, ArrayDataProvider) {\n      \"use strict\";\n      \n      class EmailModel {\n          constructor() {\n              this.allItems = ko.observableArray([\n                  {\n                      id: \"email_1\",\n                      title: \"Meeting Invite: Product direction\",\n                      from: \"Amy Bartlet\",\n                      content: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, risus ac interdum sollicitudin, sem erat ultrices ipsum.\",\n                  },\n                  {\n                      id: \"email_2\",\n                      title: \"Re: Latest market analysis from XYZ\",\n                      from: \"Nina Evans\",\n                      content: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, risus ac interdum sollicitudin, sem erat ultrices ipsum\",\n                  },\n                  {\n                      id: \"email_3\",\n                      title: \"Feedback from architecture review\",\n                      from: \"James Marlow\",\n                      content: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, risus ac interdum sollicitudin, sem erat ultrices ipsum\",\n                  },\n                  {\n                      id: \"email_4\",\n                      title: \"Customer success stories\",\n                      from: \"Julia Nayar\",\n                      content: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, risus ac interdum sollicitudin, sem erat ultrices ipsum\",\n                  },\n                  {\n                      id: \"email_5\",\n                      title: \"AD: Honey Harvest for 2015\",\n                      from: \"Bruce Ernst\",\n                      content: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, risus ac interdum sollicitudin, sem erat ultrices ipsum\",\n                  },\n                  {\n                      id: \"email_6\",\n                      title: \"Friend looking for internship\",\n                      from: \"Julia Chen\",\n                      content: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, risus ac interdum sollicitudin, sem erat ultrices ipsum\",\n                  },\n                  {\n                      id: \"email_7\",\n                      title: \"Re: Feedback from architecture review\",\n                      from: \"Nina Evans\",\n                      content: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, risus ac interdum sollicitudin, sem erat ultrices ipsum\",\n                  },\n                  {\n                      id: \"email_8\",\n                      title: \"Re: Customer success stories\",\n                      from: \"Julia Chen\",\n                      content: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, risus ac interdum sollicitudin, sem erat ultrices ipsum\",\n                  },\n              ]);\n              this.dataProvider = new ArrayDataProvider(this.allItems, {\n                  idAttribute: \"id\",\n              });\n              this.action = ko.observable(\"Nenhuma A\u00E7\u00E3o Executada\");\n              this.renderOptions = (data) =\u003E {\n                  const id = data.id;\n                  if (id === \"email_3\") {\n                      return \"archive\";\n                  }\n                  return \"read\";\n              };\n              this.handleAction = (event, context) =\u003E {\n                  this.currentItem = context.data.id;\n                  this.doAction(event.target.value);\n              };\n              this.handleMenuItemAction = (event) =\u003E {\n                  this.doAction(event.target.id);\n              };\n              this.setCurrentItem = (target) =\u003E {\n                  const listview = document.getElementById(\"listview\");\n                  const context = listview.getContextByNode(target);\n                  if (context != null) {\n                      this.currentItem = context.key;\n                  }\n                  else {\n                      this.currentItem = null;\n                  }\n              };\n              this.doAction = (action) =\u003E {\n                  if (this.currentItem != null) {\n                      this.action(\"Handle \" + action + \" action on: \" + this.currentItem);\n                  }\n                  if (action === \"trash\") {\n                      this.remove(this.currentItem);\n                  }\n                  else if (action === \"more\") {\n                      const menu = document.getElementById(\"moremenu\");\n                      menu.open();\n                  }\n              };\n              this.remove = (key) =\u003E {\n                  this.allItems.remove((current) =\u003E {\n                      return current.id === key;\n                  });\n              };\n          }\n      }\n      ojbootstrap_1.whenDocumentReady().then(() =\u003E {\n          ko.applyBindings(new EmailModel(), document.getElementById(\"listviewContainer\"));\n      });\n  });"
+  }
+ ,"CSS":{
+    "File URLs":[
+      "#JET_CSS_DIRECTORY#alta\/oj-alta-notag-min.css"
+    ]
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"27593603889478279917"
+     ,"Identification":{
+        "Title":"Swipe Actions"
+       ,"Type":"Static Content"
+      }
+     ,"Source":{
+        "HTML Code":"\u003Cdiv id=\"listviewContainer\"\u003E\n\u003Cspan class=\"oj-typography-bold\"\u003E\u003Coj-bind-text value=\"[[action]]\"\u003E\u003C\/oj-bind-text\u003E\u003C\/span\u003E\n\n\u003Coj-list-view id=\"listview\" class=\"demo-list\" data=\"[[dataProvider]]\"\u003E\n    \u003Ctemplate slot=\"itemTemplate\" data-oj-as=\"item\"\u003E\n    \u003Cli class=\"oj-swipeactions-container\"\u003E\n        \u003Coj-swipe-actions on-oj-action=\"[[handleAction]]\"\u003E\n        \u003Coj-list-item-layout\u003E\n            \u003Cspan class=\"oj-typography-body-md oj-text-color-primary\"\u003E\n            \u003Coj-bind-text value=\"[[item.data.from]]\"\u003E\u003C\/oj-bind-text\u003E\n            \u003C\/span\u003E\n            \u003Cspan\n            slot=\"secondary\"\n            class=\"oj-line-clamp-1 oj-typography-body-sm oj-text-color-secondary\"\u003E\n            \u003Coj-bind-text value=\"[[item.data.title]]\"\u003E\u003C\/oj-bind-text\u003E\n            \u003C\/span\u003E\n            \u003Cdiv\n            slot=\"tertiary\"\n            class=\"oj-line-clamp-2 oj-typography-body-xs oj-text-color-secondary\"\u003E\n            \u003Coj-bind-text value=\"[[item.data.content]]\"\u003E\u003C\/oj-bind-text\u003E\n            \u003C\/div\u003E\n            \u003Cspan slot=\"action\" class=\"oj-typography-body-sm oj-text-color-secondary\"\u003E\n            Yesterday\n            \u003C\/span\u003E\n        \u003C\/oj-list-item-layout\u003E\n        \u003Ctemplate slot=\"start\"\u003E\n            \u003Coj-bind-if test=\u0027[[renderOptions(item.data) == \"read\"]]\u0027\u003E\n            \u003Coj-option value=\"read\"\u003E\n                Unread\n                \u003Cspan class=\"fa fa-envelope\" slot=\"startIcon\"\u003E\u003C\/span\u003E\n            \u003C\/oj-option\u003E\n            \u003C\/oj-bind-if\u003E\n            \u003Coj-bind-if test=\u0027[[renderOptions(item.data) == \"archive\"]]\u0027\u003E\n            \u003Coj-option value=\"archive\" class=\"oj-swipeactions-danger\"\u003E\n                Archive\n                \u003Cspan class=\"fa fa-archive\" slot=\"startIcon\"\u003E\u003C\/span\u003E\n            \u003C\/oj-option\u003E\n            \u003C\/oj-bind-if\u003E\n        \u003C\/template\u003E\n        \u003Ctemplate slot=\"end\"\u003E\n            \u003Coj-option class=\"oj-swipeactions-neutral\" value=\"more\"\u003E\n            More\n            \u003Cspan class=\"fa fa-ellipsis-h\" slot=\"startIcon\"\u003E\u003C\/span\u003E\n            \u003C\/oj-option\u003E\n            \u003Coj-option class=\"oj-swipeactions-attention\" value=\"flag\"\u003E\n            Flag\n            \u003Cspan class=\"fa fa-flag\" slot=\"startIcon\"\u003E\u003C\/span\u003E\n            \u003C\/oj-option\u003E\n            \u003Coj-option class=\"oj-swipeactions-danger oj-swipeactions-default\" value=\"trash\"\u003E\n            Trash\n            \u003Cspan class=\"fa fa-trash\" slot=\"startIcon\"\u003E\u003C\/span\u003E\n            \u003C\/oj-option\u003E\n        \u003C\/template\u003E\n        \u003C\/oj-swipe-actions\u003E\n    \u003C\/li\u003E\n    \u003C\/template\u003E\n\u003C\/oj-list-view\u003E\n\n\u003Coj-menu\n    id=\"moremenu\"\n    aria-label=\"More Actions\"\n    on-oj-action=\"[[handleMenuItemAction]]\"\n    open-options.display=\"sheet\"\n    open-options.launcher=\"listview\"\u003E\n    \u003Coj-option id=\"reply\"\u003EReply\u003C\/oj-option\u003E\n    \u003Coj-option id=\"forward\"\u003EForward\u003C\/oj-option\u003E\n    \u003Coj-option id=\"move\"\u003EMove...\u003C\/oj-option\u003E\n\u003C\/oj-menu\u003E\n\u003C\/div\u003E"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (45607823258133910447)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"29472192329953356212"
+     ,"Identification":{
+        "Title":"Breadcrumb"
+       ,"Type":"Breadcrumb"
+      }
+     ,"Source":{
+        "Breadcrumb":"Breadcrumb (45607596062266910359)"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Title Bar (45607861607500910523)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-BreadcrumbRegion--useBreadcrumbTitle"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "Breadcrumb Template":"Breadcrumb (45608016136418910576)"
+         ,"Template Options":[
+            "#DEFAULT#"
+          ]
+        }
+      }
+    }
+  ]
+}

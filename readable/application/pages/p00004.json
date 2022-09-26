@@ -22,7 +22,7 @@
   }
  ,"JavaScript":{
     "File URLs":[
-      "#APP_IMAGES#script\/card.js"
+      "#WORKSPACE_FILES#script\/card.js"
     ]
   }
  ,"Security":{

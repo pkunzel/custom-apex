@@ -241,6 +241,36 @@
         }
       }
      ,{
+        "id":"20787559923320817551"
+       ,"Label":{
+          "Label":"Report JET"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-file-o"
+        }
+       ,"Layout":{
+          "Sequence":101
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "21"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:21:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"21"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
         "id":"21122210142058496534"
        ,"Label":{
           "Label":"List View (Expandable)"
@@ -313,6 +343,36 @@
           "Target":{
             "url":"f?p=\u0026APP_ID.:4:\u0026SESSION.::\u0026DEBUG.::::"
            ,"Page":"4"
+          }
+        }
+       ,"Click Counting":{
+          "Count Clicks":false
+        }
+       ,"User Defined Attributes":{
+          "Translatable":false
+        }
+      }
+     ,{
+        "id":"29472191815431356211"
+       ,"Label":{
+          "Label":"Swipe Actions - JET"
+        }
+       ,"Icon":{
+          "Image\/Icon CSS Classes":"fa-file-o"
+        }
+       ,"Layout":{
+          "Sequence":111
+        }
+       ,"Is Current":{
+          "Type":"Pages"
+         ,"Pages":[
+            "22"
+          ]
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:22:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"22"
           }
         }
        ,"Click Counting":{
